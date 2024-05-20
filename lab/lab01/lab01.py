@@ -10,11 +10,16 @@ def falling(n, k):
     >>> falling(4, 0)
     1
     """
-    total, stop = 1, n-k
-    while n > stop:
-        total, n = total*n, n-1
-    return total
-
+    "*** YOUR CODE HERE ***"
+    sum = n
+    if(k!=0):
+        while k>1:
+            sum = sum * (n-1)
+            k = k - 1
+            n=n-1
+        print(sum)
+    else :
+        print(1)
 
 def divisible_by_k(n, k):
     """
@@ -36,15 +41,16 @@ def divisible_by_k(n, k):
     >>> c
     0
     """
+    "*** YOUR CODE HERE ***"
     count = 0
-    i = 1
-    while i <= n:
-        if i % k == 0:
-            print(i)
-            count += 1
-        i += 1
-    return count
-
+    if(n>=k):
+        for i in range(1,n+1):
+            if(i%k==0):
+                print(i)
+                count = count + 1
+        return count
+    else:
+        return 0
 
 def sum_digits(y):
     """Sum all the digits of y.
@@ -59,11 +65,12 @@ def sum_digits(y):
     >>> a
     6
     """
-    total = 0
-    while y > 0:
-        total, y = total + y % 10, y // 10
-    return total
-
+    "*** YOUR CODE HERE ***"
+    sum = 0
+    while(y):
+        sum=sum+y%10
+        y=y//10
+    return sum
 
 def double_eights(n):
     """Return true if n has two eights in a row.
@@ -80,24 +87,9 @@ def double_eights(n):
     >>> double_eights(80808080)
     False
     """
-    prev_eight = False
-    while n > 0:
-        last_digit = n % 10
-        if last_digit == 8 and prev_eight:
+    "*** YOUR CODE HERE ***"
+    Str =str(n)
+    for i in range(0,len(Str)-1):
+        if(Str[i]=='8' and Str[i+1]=='8'):
             return True
-        elif last_digit == 8:
-            prev_eight = True
-        else:
-            prev_eight = False
-        n = n // 10
     return False
-
-
-# Alternate solution
-def double_eights_alt(n):
-    while n:
-        if n % 10 == 8 and n // 10 % 10 == 8:
-            return True
-        n //= 10
-    return False
-

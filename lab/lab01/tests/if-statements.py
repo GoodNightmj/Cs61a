@@ -17,6 +17,7 @@ test = {
           foo
           """,
           'hidden': False,
+          'locked': False,
           'multiline': False
         },
         {
@@ -39,6 +40,7 @@ test = {
           'mashed potatoes'
           """,
           'hidden': False,
+          'locked': False,
           'multiline': False
         }
       ],
