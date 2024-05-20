@@ -1,0 +1,4 @@
+from math import add
+
+add(1, 2)
+assert add(1, 2) == 4 ,'add(1, 2) should be 3'
